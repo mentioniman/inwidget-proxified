@@ -1,4 +1,21 @@
 <?php
+
+// use this proxy to render Instagram images and videos to avoid CORS Origin errors, like this: 
+/*
+foreach ($medias as $media) {
+        if (in_array($media->getType(), ['image', 'sidecar'])) {
+            $url = urlencode($media->getImageThumbnailUrl()); // code is from https://github.com/restyler/instagram-php-scraper
+            echo "<img src='/imgproxy.php?url={$url}' />";
+        } else if ($media->getType() == 'video') {
+            $url = urlencode($media->getVideoStandardResolutionUrl());
+            echo "<video controls> <source src='/imgproxy.php?url={$url}' ></video>";
+        } else {
+            echo 'Unknown post type';
+        }
+     
+    }
+*/
+
 function ends_with( $haystack, $needle ) {
     return substr($haystack, -strlen($needle))===$needle;
 }
